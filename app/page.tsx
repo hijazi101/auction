@@ -315,11 +315,12 @@ export default function Home() {
                   type="hidden"
                   {...register('image', { required: 'Image is required' })}
                 />
-                {errors.image && (
-                  <p className="text-red-500 text-xs mt-1">
-                    {errors.image.message}
-                  </p>
-                )}
+               {typeof errors.image?.message === 'string' && (
+  <p className="text-red-500 text-xs mt-1">
+    {errors.image.message}
+  </p>
+)}
+
               </div>
 
               <div>
